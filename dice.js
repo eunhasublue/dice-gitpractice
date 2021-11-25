@@ -1,1 +1,3 @@
-querySelector
+array.forEach(element => {
+    
+});
