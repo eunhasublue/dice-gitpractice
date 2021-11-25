@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pig the dice game</title>
+</head>
+<script>
+let dice_num = 0;
+let sum = 0;
+function rolling(){
+    dice_num =  Math.floor(Math.random() * 6) + 1;
+    document.getElementById('dice-num').innerHTML = dice_num;
+    if(dice_num === 1) {
+        document.getElementById('dice-num').innerHTML = "초기화";
+        sum = 0;
+        return;
+    } else {
+        sum += dice_num;      
+    }
+    document.getElementById('sum_dice').innerHTML = sum
+}
+</script>
+<body>
+    <h1>★ Pig the dice game ★ </h1>
+    <p style ="color:gray">■ 주사위 점수 : <span style ="color:red" id="dice-num"></span></p>
+    <p style ="color:gray">■ 누적 값 : <span style ="color:red" id="sum_dice"></span></p>
+    <button onclick="rolling()">굴리기</button>
+</body>
+</html>
